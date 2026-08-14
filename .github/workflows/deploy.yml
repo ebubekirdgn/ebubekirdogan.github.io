@@ -8,8 +8,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure git for Actions
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
@@ -17,3 +24,7 @@ jobs:
           branch: gh-pages
           folder: .
           token: ${{ secrets.GITHUB_TOKEN }}
+          clean: true
+          allow_empty_commit: true
+          single_commit: false
+          commit_message: "chore(deploy): update gh-pages [skip ci]"
