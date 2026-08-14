@@ -1,0 +1,23 @@
+:root{--bg:#0f1720;--card:#0b1220;--muted:#9aa4b2;--accent:#6ee7b7;--text:#e6eef6}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Segoe UI,Helvetica,Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.5}
+.container{max-width:900px;margin:40px auto;padding:0 20px}
+.site-header{background:linear-gradient(90deg,#071124 0%,#0b1720 100%);padding:14px 20px}
+.nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:700;color:var(--accent);text-decoration:none}
+.nav-links a{color:var(--text);margin-left:16px;text-decoration:none}
+.hero{padding:40px 0}
+.hero h1{font-size:2.2rem;margin:0 0 6px}
+.subtitle{color:var(--accent);margin:0 0 12px}
+.bio{color:var(--muted);max-width:60%}
+.cta{display:inline-block;margin-top:12px;padding:10px 14px;background:var(--accent);color:#022; border-radius:8px;text-decoration:none}
+.gh-profile{display:flex;gap:16px;align-items:center;margin-top:12px}
+.gh-profile img{width:84px;height:84px;border-radius:10px}
+.gh-meta h3{margin:0}
+.gh-repos{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
+.repo{background:var(--card);padding:10px;border-radius:8px}
+.posts-list{list-style:none;padding:0;margin:0}
+.posts-list li{background:var(--card);margin:8px 0;padding:12px;border-radius:8px}
+.post-content{background:transparent;color:var(--text)}
+.site-footer{padding:30px 20px;text-align:center;color:var(--muted);margin-top:40px}
+@media (max-width:640px){.bio{max-width:100%}}
