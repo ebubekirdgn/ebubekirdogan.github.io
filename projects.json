@@ -1,0 +1,5 @@
+[
+  {"name":"Kişisel Site","desc":"Bu statik site, blog ve portföy amaçlı örnek proje.","url":"https://github.com/ebubekirdgn/ebubekirdogan.github.io"},
+  {"name":"Örnek API","desc":"Küçük REST API örneği, Node.js ve Express ile yazıldı.","url":"https://github.com/ebubekirdgn/sample-api"},
+  {"name":"React Gösteri","desc":"React + Vite ile hazırlanmış demo uygulama.","url":"https://github.com/ebubekirdgn/react-showcase"}
+]

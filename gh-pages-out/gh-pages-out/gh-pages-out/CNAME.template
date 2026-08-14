@@ -1,0 +1,6 @@
+# Eğer özel domain kullanmak istiyorsanız bu dosyayı `CNAME` olarak yeniden adlandırın
+# ve içine alan adınızı yazın, örnek:
+#
+# www.sizinalanadi.com
+
+# Not: GitHub Pages ayarlarında da custom domain kısmına bu alan adını ekleyin.
