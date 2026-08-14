@@ -1,6 +1,7 @@
 :root{--bg:#0f1720;--card:#0b1220;--muted:#9aa4b2;--accent:#6ee7b7;--text:#e6eef6}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 *{box-sizing:border-box}
-body{font-family:Inter,system-ui,Segoe UI,Helvetica,Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.5}
+body{font-family:Inter,system-ui,Segoe UI,Helvetica,Arial,sans-serif;margin:0;background:linear-gradient(180deg,#071124 0%,var(--bg) 100%);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
 .container{max-width:900px;margin:40px auto;padding:0 20px}
 .site-header{background:linear-gradient(90deg,#071124 0%,#0b1720 100%);padding:14px 20px}
 .nav{display:flex;justify-content:space-between;align-items:center}
@@ -21,3 +22,9 @@ body{font-family:Inter,system-ui,Segoe UI,Helvetica,Arial,sans-serif;margin:0;ba
 .post-content{background:transparent;color:var(--text)}
 .site-footer{padding:30px 20px;text-align:center;color:var(--muted);margin-top:40px}
 @media (max-width:640px){.bio{max-width:100%}}
+
+/* Small tweaks for markdown content in posts */
+.post-content h1,.post-content h2,.post-content h3{color:var(--text)}
+.post-content p{color:var(--muted)}
+.post-content pre{background:#03101a;padding:12px;border-radius:8px;overflow:auto}
+.logo{font-family:monospace}

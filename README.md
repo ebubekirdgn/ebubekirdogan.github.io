@@ -1,6 +1,20 @@
 # ebubekirdogan.github.io
 
 Kişisel statik site iskeleti: ana sayfa, blog ve GitHub entegrasyonu.
+GitHub Pages ile otomatik deploy
+
+Not: Eğer repo ana dalınız `main` değilse, `.github/workflows/deploy.yml` içindeki `branches` kısmını uygun dal adıyla güncelleyin.
+
+Canlı Site
+
+- Site yayında: https://ebubekirdgn.github.io
+
+Badge
+
+![Deploy status](https://github.com/ebubekirdgn/ebubekirdogan.github.io/actions/workflows/deploy.yml/badge.svg)
+# ebubekirdogan.github.io
+
+Kişisel statik site iskeleti: ana sayfa, blog ve GitHub entegrasyonu.
 
 Hızlı başlatma:
 
