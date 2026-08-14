@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ebubekir Doğan — Yazılımcı</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="/">EbubekirDo</a>
+      <div class="nav-links">
+        <a href="/">Ana Sayfa</a>
+        <a href="blog.html">Blog</a>
+        <a id="gh-link" href="https://github.com/ebubekirdgn/" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Ebubekir Doğan</h1>
+      <p class="subtitle">Yazılım geliştirici — Frontend &amp; Web</p>
+      <p class="bio">Merhaba! Bu site kişisel portföyüm ve blog'umdur. Projelerim ve yazılarımı burada bulabilirsiniz.</p>
+      <p><a class="cta" href="blog.html">Blog'u Gör</a></p>
+    </section>
+
+    <section class="github" aria-labelledby="gh-heading">
+      <h2 id="gh-heading">GitHub</h2>
+      <div id="gh-profile" class="gh-profile">
+        <div class="avatar-placeholder">Yükleniyor...</div>
+        <div class="gh-meta">
+          <h3 id="gh-name"></h3>
+          <p id="gh-bio"></p>
+          <p><a id="gh-follow" href="#">Profile Git</a></p>
+        </div>
+      </div>
+      <div id="gh-repos" class="gh-repos"></div>
+    </section>
+
+    <section class="blog-preview">
+      <h2>Son Yazılar</h2>
+      <ul id="recent-posts" class="posts-list"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Ebubekir Doğan — <a href="https://github.com/ebubekirdgn">GitHub</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
