@@ -25,6 +25,8 @@ jobs:
           folder: .
           token: ${{ secrets.GITHUB_TOKEN }}
           clean: true
-          allow_empty_commit: true
-          single_commit: false
-          commit_message: "chore(deploy): update gh-pages [skip ci]"
+          single-commit: false
+          commit-message: "chore(deploy): update gh-pages [skip ci]"
+          force: true
+          git-config-name: "github-actions[bot]"
+          git-config-email: "41898282+github-actions[bot]@users.noreply.github.com"
