@@ -18,15 +18,34 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Deploy to gh-pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: .
-          token: ${{ secrets.GITHUB_TOKEN }}
-          clean: true
-          single-commit: false
-          commit-message: "chore(deploy): update gh-pages [skip ci]"
-          force: true
-          git-config-name: "github-actions[bot]"
-          git-config-email: "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Deploy to gh-pages (manual git push)
+        env:
+          REPO: ${{ github.repository }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Prepare a clean clone of the gh-pages branch (or create it)
+          if git ls-remote --exit-code --heads https://x-access-token:${TOKEN}@github.com/${REPO} gh-pages; then
+            git clone --depth=1 --branch=gh-pages https://x-access-token:${TOKEN}@github.com/${REPO} gh-pages-out
+          else
+            git clone --depth=1 https://x-access-token:${TOKEN}@github.com/${REPO} gh-pages-out || true
+            pushd gh-pages-out >/dev/null 2>&1 || mkdir gh-pages-out && pushd gh-pages-out >/dev/null 2>&1
+            git checkout --orphan gh-pages || true
+            popd >/dev/null 2>&1
+          fi
+
+          # Sync current workspace into the gh-pages clone, excluding git metadata and workflows
+          rsync -av --delete --exclude='.git' --exclude='.github' --exclude='node_modules' ./ gh-pages-out/
+
+          pushd gh-pages-out >/dev/null
+          git add --all
+          if git diff --staged --quiet; then
+            echo "No changes to deploy"
+          else
+            git commit -m "chore(deploy): update gh-pages [skip ci]"
+            git push https://x-access-token:${TOKEN}@github.com/${REPO} gh-pages --force
+          fi
+          popd >/dev/null
